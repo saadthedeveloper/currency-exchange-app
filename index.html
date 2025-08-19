@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Currency Converter</title>
+</head>
+
+<body>
+
+            <div id="main-container">
+                <form>
+                    <div class="amount">
+                        <p>Enter A Value</p>
+                        <input type="text" value="$1.00">
+                    </div>
+
+                    <div class="conversion-container">
+
+
+                        <div class="from">
+                            <p>From</p>
+                            <div class="select-container">
+                                <img src="https://flagsapi.com/US/flat/64.png">
+                                <select name="from" id="">
+                                    
+                                </select>
+                                
+                            </div>
+                        </div>
+
+<div class="icon-container">
+    
+    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+</div>
+
+                        <div class="to">
+                            <p>To</p>
+                            <div class="select-container">
+
+                                <select name="to" id="">
+                                   
+                                </select>
+                                <img src="https://flagsapi.com/CA/flat/64.png">
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div id="converted-amount-outter-div">
+                        <p id="converted-amount-p">Converted Amount</p>
+                        <div id="converted-amount-div"></div>
+                    </div>
+                    <button id="convert-button">Convert</button>
+                </form>
+            </div>
+            <script src="codes.js"></script>
+            <script src="script.js"></script>
+
+</body>
+</html>
