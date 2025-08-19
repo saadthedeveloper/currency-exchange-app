@@ -2,6 +2,10 @@ const BASE_URL =
     "https://hexarate.paikama.co/api/rates/latest/inr?target=pkr";
 
 const dropdowns = document.querySelectorAll(".select-container select");
+const button = document.querySelector("form button");
+const fromCurr = document.querySelector(".from select");
+const toCurr = document.querySelector(".to select");
+let convertedAmountSlot = document.querySelector("#converted-amount-div")
 
 for (let select of dropdowns) {
     for (let currCode in countryList) {
@@ -29,7 +33,28 @@ function updateFlag(element) {
     img.src = newFlagLink;
 
 
- ; img.src = newFlagLink;
+    ; img.src = newFlagLink;
 
 
 };
+
+button.addEventListener("click", async(evt) => {
+    evt.preventDefault();
+    let amountInput = document.querySelector("form .amount input");
+    let amountInputValue = Number(amountInput.value);
+    console.log(amountInputValue);
+    if (amountInputValue === "" || amountInputValue < 1) {
+        amountInput.value = 1;
+        amountInputValue = 1;
+    }
+    const URL = `https://hexarate.paikama.co/api/rates/latest/${fromCurr.value.toLowerCase()}?target=${toCurr.value.toLowerCase()}`;
+    let response = await fetch(URL);
+    console.log(response);
+    let usableData = await response.json();
+    let convertedAmount = usableData.data.mid * amountInputValue;
+
+    convertedAmountSlot.innerText = convertedAmount;
+
+
+
+});
